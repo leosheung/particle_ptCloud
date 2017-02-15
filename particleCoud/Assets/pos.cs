@@ -30,16 +30,13 @@ public class pos : MonoBehaviour
 
         while (index < total)
         {
-            if (Random.Range(0, 2) >= 1.8)
-            {
-                pos = gos[index].position;
-                pos = geo.transform.TransformPoint(geo.GetComponent<MeshFilter>().mesh.vertices[index]);
-                // pos.x = Mathf.RoundToInt(pos.x);
-                // pos.y = Mathf.RoundToInt(pos.y);
+            pos = gos[index].position;
+            pos = geo.transform.TransformPoint(geo.GetComponent<MeshFilter>().mesh.vertices[index]);
+            // pos.x = Mathf.RoundToInt(pos.x);
+            // pos.y = Mathf.RoundToInt(pos.y);
 
-                gos[index].position = pos;
-                index++;
-            }
+            gos[index].position = pos;
+            index++;
         }
 
         particles.SetParticles(gos, total);
